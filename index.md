@@ -1,8 +1,8 @@
 ## Della Sigrest
 
-You can use the [editor on GitHub](https://github.com/dsigrest/dsigrest.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Hey there! Welcome to my Github page. I'm a first year Master's student at the University of Washintong studying Human Centered Design and Engineering. This quarter, I'm learning about Digital Fabrication. You can follow my projects here!
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+You can also check out my portfolio [Link](https://dellasigrest.com/)
 
 ### Markdown
 
