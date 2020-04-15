@@ -1,7 +1,7 @@
 
 html, body {
   padding: 30 30 30 30;
-  margin: 0;
+  margin: 30;
   font-family: 'helvetica', 'arial', 'sans';
 }
 
@@ -54,8 +54,8 @@ a {
 }
 
 .widebody {
-    width: 800px;
-    padding: 0px 30px 30px 30px;
+    width: 600px;
+    padding: 30px 30px 30px 30px;
 }
 
 .widebody a {
