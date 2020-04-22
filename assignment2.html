@@ -4,7 +4,7 @@
         <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
 
-        <title>Assignment 2!</title> 
+        <title>Assignment 1</title> 
 
         <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
 
@@ -12,14 +12,58 @@
     <body> 
 
         <div class="header">
-            <h1>Example Assignment 2!</h1>
+            <h1>PNW Cookie Cutters</h1>
+    </div>
+    <h2>Introduction</h2>
             <p>
-            <img src="red-panda.jpg" width=400></a>
+            As an introduction to Rhino, our class made cookie cutters from shapes we found in images! The goal was to process an image through photoshop and illustrator, import the prepared file into Rhino, then build our cookie cutters from the resulting curves and export them as <a href="https://drive.google.com/open?id=1jBgeQpc9aVP6xg4_KclfrooEO0cNWRkb"> .STL's</a>. Check out the <a href="https://drive.google.com/open?id=1prsVizpT9sgzJ4a3Y-s5slncXVPnF8BJ"> Rhino files </a> here! Want to see how I did it? Read on!
             </p>
-            <p>
-            Here is all the documentation for assignment 2!
+             <p>
+            <img src="SpaceNeedle Final.png" width=400></a>
             </p>
-        </div>
+<h2>Step One: Preparing the Images</h2>
+<p>
+   To make clear cookie cutters, I wanted to choose photos that had distinct silhouettes and graphic shapes. I decided to go with a PNW theme, and chose photos of the <a href="https://d21r7vbeu4autc.cloudfront.net/assets/files/2744/space_needle_hotel-1.550x450.jpg"> space needle</a>, <a href="https://www.thepicketfence.com/pub/media/catalog/product/cache/image/700x700/e9c3970ab036de70892d86c6d221abfe/f/e/fernfrondsdetail_t-589_grande.jpg"> ferns </a>, and <a href="https://s24476.pcdn.co/wp-content/uploads/2018/10/web1_Patterson-Bigfoot.jpg"> sasquatch</a>... Alright, so the sasquatch isn't *really* a graphic shape. But I loved the original photo and wanted to see if I could make something silly work!</p>
+<p>
+            <img src="Sasquatch Photo.jpg" width=400></a>
+            </p>
+<p>
+    First, I imported the images to photshop. I adjusted the threshold to get better control on how image trace would be executed in Illustrator. I cleared the backgrounds from the images and imported them into Illustrator. Using the image trace tool, I produced vector outlines of my images. I spent a couple minutes cleaning up the outlines so I was happy with them. You can do this later in Rhino tool, but I found I could do it with more precision in Illustrator. For the Sasquatch, I added his back leg in by hand, since the original photo did not have enough contrast to capture the leg with the threshhold tool. In a couple caseslines in illustrator, as well as cleaning up the extra shapes in illustrator (used the pathfinder tool). Then, I exported it as a .dwg- paying careful attention to the scale and units I was exporting it at. I chose inches. 
+       </p>
+
+<p>
+            <img src="Fern Threshhold.jpg" width=400></a>
+            </p>
+<p>
+            <img src="Fern Outline.png" width=400></a>
+            </p>
+<h2>Step Two: Import the File to Rhino </h2>
+<p>
+   Next, I opened up Rhino and chose a template file in inches (the same unit that I used to export the .dwg from Illustrator. I imported my file (again, paying careful attention to units). I checked the size and centered the shape. Using the rebuild function, I simplified any excess points.
+</p>
+<p>
+            <img src="Space Needle Points.png" width=400></a>
+            </p>
+<h2>Step Three: Extrude Your Shapes</h2>
+    <p>
+    I created the base for the cookie cutter's walls using the offset tool. I made mine 0.125" thick. Then, I extruded the walls to approximately 2". I created the base by once again offsetting the original cure- this time by 0.5", and extruding a solid surface up about 0.5". Similarly, I created the cookie cutter's inner details by offsetting curves and extruding surfaces.
+    </p>
+       <p>
+       <img src="Extruding Spaceneedle.png" width=400></a>
+       </p>
+
+<h2>Step Four: Finishing Up and Exporting</h2>
+<p>
+    Finally, I selected all my shapes and connected them with the boolean union tool. I saved my file, then exported it as an STL of ryour viewing pleasure!
+</p>
+<p>
+            <img src="Fern Final.png" width=400></a>
+            </p>
+  <p><img src="Sasquatch Final.png" width=400></a>
+            </p>
+ <p><img src="SpaceNeedle Final.png" width=400></a>
+            </p>
+
         
     </body>
 </html>
