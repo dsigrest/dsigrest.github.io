@@ -16,77 +16,40 @@
     </div>
     <h2>Introduction</h2>
             <p>
-                This week, I set up my 3d printer and got started with various basic shapes. This helped me calibrate my machine and get comfortable with slicer settings! Along the way I trouble shooted some issues around first layer adhesion. Here's what I made:
-        </p>
-             <p>
-            <img src="1.jpg" width=400 class="rotateimg90"></a>
-            </p>
-<p>
-    Read on to learn how I did it!
-</p>
-<h2>Step One: Set up the Printer</h2>
-<p>
-            <img src="2.jpg" width=400></a>
-            </p>
-<p>
-    I set up my printer using the directions that came with the kit. I made sure to check that all the screws were tight- especailly the eccentric nuts on the extruder.
-</p>
-<p>
-            <img src="3.jpg" width=400></a>
-            </p>
-<p>
-    Next I leveled the bed (with a sheet of paper?! Really?!) and loaded the filament. My printer was ready to roll!
-</p>
-            <p>
-            <img src="4.jpg" width=400></a>
+                To learn about printing nested geometry and get a better handle on grasshopper, I created these nested heart trays. You can reference my <LINK> rhino file and <LINK> Grasshopper definition here, and see my <LINK> STL here! Want to see how I made it? Read on!
+                </p>
+                <p>
+            <img src="n1.jpg" width=400 class="rotateimg90"></a>
             </p>
 
-<h2>Step Two: Build and Slice Your Files</h2>
+<h2>Build and Import Base Geometry</h2>
+
 <p>
-    I built the required shapes easily in Rhino by using it's basic tool function. I exported them as .STLs, then imported them into Ultimaker Cura to slice them for printing. I used the settings to create a brim on my shapes, which helps with first layer adhesion.
-</p>
+    I built my heart in illustrator, then imported it into Rhino. There, I was able to begin working in Grasshopper.
 <p>
-            <img src="5.png" width=400></a>
+            <img src="n2.jpg" width=400></a>
             </p>
+
+<h2>Grasshopper</h2>
 <p>
-    I also tried printing the same shapes at different quality settings. "LOw Quality" printed more quickly, but lacked the polished finish that longer, "High Quality" prints had. Some other settings I experimented with were infill and wall thickness. 
+    I created a polygon component in Grasshopper, then connected my imported geometry to it. I used a linear array to make copies of my shape, then offset their curves at increasing intervals of specified distances to create the nested walls of my trays. I referenced Josh's tutorials to help me properly pair the walls and extrude them as solid objects. Then, I baked my definition and moved the separate trays along the Z axis in Rhino. Crating this spacing allowed me to use the slicer to generate supports, which would allow me to print 3 separate geometries on top of one another. 
 </p>
 <p>
-            <img src="6.jpg" width=400 class="rotateimg90"></a>
+            <img src="n3.png" width=400></a>
             </p>
-<p>
-    I exported the sliced shapes as gcode- which is basically instructions for your printer- and got started!
-</p>
-<h2>Step Three: Printing</h2>
+
+<h2>Slicing and Printing</h2>
     <p>
-        Printing went smoothly- with a few expections. Twice I faced adhesion issues- which I resolved by 1. Cleaning the Bed (note: don't touch the printbed with lotion on your hands) and 2. Leveling the Printbed after checking the extruder's auto-home location. 
-</p>
-      <p>
-            <img src="7.jpg" height=200 class="rotateimg90"></a>
+        I generated supports under each of the nested hearts, so they could be deconstructed after printing.
+</p>      
+<p>
+            <img src="n4.jpg" height=200 class="rotateimg90"></a>
             </p>
 <p>
-    This assignment was pretty straighforward, although I did get to experiment a bit when I printed the "Cube with a Hole" shape. This one I printed 3 times to see how close to the +/- .5mm threshold I could make the shape. My first print was within the threshold, but barely:
+    After printing, I detatched the supports and was left with my final trays!
 </p>
 <p>
-            <img src="8.jpg" width=400 class="rotateimg90"></a>
+            <img src="n5.jpg" height=200 class="rotateimg90"></a>
             </p>
-<p>
-    "Cube with a Hole 2" was closer. I adjusted the slice settings to only have one extrusion wall thickness to give the hole some more space, and set it to print at a higher quality (dynamic).
-</p>
-<p>
-            <img src="9.jpg" height=200 class="rotateimg90"></a>
-            </p>
-<p>
-    For print 3, I used the same slicer settings as print 2- BUT I rebuilt the shape in Rhino with a larger hole. Instead of creating a hole with exactly a 5mm diameter, I made it 5.5mm (accounting for the difference I was seeing in prints).
-</p>
-<p>
-    <img src="10.jpg" height=200 class="rotateimg90"></a>
-     </p>
-
-<h2>Moving Forward</h2>
-<p>
-    This assignment was a great confidence builder! After finishing my basic shapes, I started playing on my own with the cookie cutters. More to come!
-</p>
-
     </body>
 </html>
