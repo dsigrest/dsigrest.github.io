@@ -21,8 +21,11 @@
 <h1>Part One: STL Mesh</h1>
 
 <p>
-    Originally for this mesh assignment, I wanted to combine two STLs of classical sculptures to create a silly phone stand. I learned some important lessons along the way on checking if a mesh is a "good mesh" before you start working, and *why* it's challenging to work with very detailed meshes. After too much fiddling with my original plan, I pivoted and was able to successfully combine two simpler meshes.
+    Originally for this mesh assignment, I wanted to combine two STLs of classical sculptures to create a silly phone stand (see my sketches below!). I learned some important lessons along the way on checking if a mesh is a "good mesh" before you start working, and *why* it's challenging to work with very detailed meshes. After too much fiddling with my original plan, I pivoted and was able to successfully combine two simpler meshes.
         </p>
+         <p>
+            <img src="L1c.png" width=400></a>
+            </p>
 <h2>Imported STLs</h2>
 <p>
    First, I imported these awesome sculpture STLs into rhino. The original files had ~millions of triangles, so I reduced them to about 150,000 each (which turned out to be unweildy, still!) I didn't check to see if these meshes were "good meshes" when I imported them- I wish now that I had. After resizing and manipulating their mesh, it would have been good to know if the issues came from me or the original files.
@@ -34,7 +37,7 @@
 
 <h2>Mesh Manipulation</h2>
      <p>
-            I took measurements of my phone and used them to size and space the two statues. I also built a phone stand that could accomodate my phone in it's case- while plugged into the charger. Then, I used the "points on" command to manipulate their mesh so it didn't interfere with the arms that held the phone OR extend beyond the base I built for the stand. (I am sure this manipulation contributed to my "bad mesh" later down the road.)
+            I took measurements of my phone and used them to size and space the two statues. I had to make some changes to my original design,  I also built a phone stand that could accomodate my phone in it's case- while plugged into the charger. Then, I used the "points on" command to manipulate their mesh so it didn't interfere with the arms that held the phone OR extend beyond the base I built for the stand. (I am sure this manipulation contributed to my "bad mesh" later down the road.)
         </p>  
 <p>
     I converted my polysurface phone stand into a mesh, then tried several different methods (like BooleanMeshUnion, Join, etc) to merge the three pieces into a printable surface. I tried to repair the mesh afterwards, but to no avail. I think it was such a mess at that point, I'd need to try again with freshly imported meshes- then proceed with more caution while manipulating the mesh.  
