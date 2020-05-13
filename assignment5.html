@@ -1,0 +1,124 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Assignment 5</title> 
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+
+    </head> 
+    <body> 
+
+        <div class="header">
+            <h1>Lamp (pt. 2) and Molds</h1>
+    </div>
+    <h2>Introduction</h2>
+            <p>
+                This week, I worked on creating one printable mesh from two separate STLs and getting started on my lamp project. I'll cover both projects over two parts in the documentation below! 
+        </p>
+<h1>Part One: STL Mesh</h1>
+
+<p>
+    Originally for this mesh assignment, I wanted to combine two STLs of classical sculptures to create a silly phone stand (see my sketches below!). I learned some important lessons along the way on checking if a mesh is a "good mesh" before you start working, and *why* it's challenging to work with very detailed meshes. After too much fiddling with my original plan, I pivoted and was able to successfully combine two simpler meshes.
+        </p>
+         <p>
+            <img src="L1c.jpg" width=400></a>
+            </p>
+<h2>Imported STLs</h2>
+<p>
+   First, I imported these awesome sculpture STLs into rhino. The original files had ~millions of triangles, so I reduced them to about 150,000 each (which turned out to be unweildy, still!) I didn't check to see if these meshes were "good meshes" when I imported them- I wish now that I had. After resizing and manipulating their mesh, it would have been good to know if the issues came from me or the original files.
+        </p>
+     
+        <p>
+            <img src="L1.png" width=400></a>
+            </p>
+
+<h2>Mesh Manipulation</h2>
+     <p>
+            I took measurements of my phone and used them to size and space the two statues. I had to make some changes to my original design because I wasn't confident about measuring the size between different parts of the mesh. I used the distance tool to do this, but had trouble knowing if I selected the portion of the mesh that I really wanted to measure from. Any tips? To get around the measuring uncertainty, I made a more pronounced and geometric stand between the two figures (which is clunky looking for sure, but I figured a fine place to start with a prototype.)  The phone stand  could accomodate my phone in it's case- while plugged into the charger. Then, I used the "points on" command to manipulate their mesh so it didn't interfere with the arms that held the phone OR extend beyond the base I built for the stand. (I am sure this manipulation contributed to my "bad mesh" later down the road.)
+        </p>  
+<p>
+    I converted my polysurface phone stand into a mesh, then tried several different methods (like BooleanMeshUnion, Join, etc) to merge the three pieces into a printable surface. I tried to repair the mesh afterwards, but to no avail. I think it was such a mess at that point, I'd need to try again with freshly imported meshes- then proceed with more caution while manipulating the mesh. You can see my <a href="https://drive.google.com/file/d/1wJqA0D_7a_BexSJfQfx1PBPreJhdIqAZ/view?usp=sharing">Rhino File</a> here.
+</p>
+<p>
+            <img src="L2.png" width=400></a>
+            </p>
+
+<h2>Plan B</h2>
+    <p>
+        I decided to try again with simpler meshes to see if I could get it to work. On thingiverse, I found two pieces of simpler geometry that I wanted to combine in order to create a personalized plant clip (photos below). I checked to be sure that both of the meshes I imported were "good meshes" before starting to work. (Several files I found on thingiverse were not!) 
+</p>      
+<p>
+            <img src="L3.png" width=400></a>
+            </p>
+<p>
+            <img src="L4.png" width=400></a>
+            </p>
+
+<h2>Modifying Mesh: Round Two</h2>
+    <p>
+        First, I removed parts of the flower FOB that I didn't want. I placed the flower where I wanted it to attach to the plant clip, and used BooleanMeshUnion to combine the shapes. After, I used RepairMesh to check that it was a good mesh. Finally, I exported the mesh as an STL- it passed all the rapid prototyping checks! You can see my files <a href="https://drive.google.com/drive/folders/1e6KmVUGhG8IxK2MgEsNgUiLHWhi7PdOd?usp=sharing"> here</a>.
+</p>      
+<p>
+            <img src="L5.png" width=400></a>
+            </p>
+
+<h1>Part Two: Lamp</h1>
+    <p>
+        For the lamp project, I was inspired by John Grade's "Middle Fork" piece- now on display at the SAM. I'm drawn to the intersection of geometric and organic shapes, and wanted to incorporate that into my lamp. I also thought it'd be an excellent opportunity to work modularly with my printer(to avoid long prints and sizing limits from the printer).
+</p>      
+<p>
+            <img src="L6a.png" width=400></a>
+            </p>
+<p>
+            <img src="L6b.png" width=400></a>
+            </p>
+<p>
+            <img src="L6c.png" width=400></a>
+            </p>
+<h2>Sketches</h2> 
+<p>
+        I experimented with different shapes and presentations for my lamp. My favorites are a linear lamp (like a piece of driftwood) build modularly around a LED tube light, or, a "warped cynlinder" shaped lamp that sort of nests around itself. My plan is to create a grasshopper definition that allows me to apply a geometric patter of cut outs onto different geometries, that attach modularly to form the complete lamp. To connect the pieces, I'm considering screws, flexible tabs that snap, or pins that lock into place by twisting.
+</p>   
+<p>
+            <img src="L7.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L7a.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L7b.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L7c.jpg" width=400></a>
+            </p>
+<p>
+        Here are some more examples of the textures and shapes for my lamp. Depending on how the grasshopper definition and connection mechanism for the modular pieces go, I can scope the final shape of the lamp more or less complicated.  
+</p>   
+<p>
+            <img src="L8.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L8a.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L8ab.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L8c.jpg" width=400></a>
+            </p>
+
+<h2>Next Steps: Prep and Test</h2> 
+
+<p>
+        This week I made less progress than I was anticipating due to a family emergency. I've begun building my grasshopper definition (working with Voroni), but have not printed any tests just yet. I want to get the printer running asap, because I'm working with a PLA that is infused with wood for the final product. I want to understand the material's quirks before I get too far! My plan moving forward is: 
+</p>  
+<ol>
+  <li>Finish Grasshopper Definition (testing with light to adjust thickness, hole sizes, and hole frequency for desired effect)</li>
+  <li>Develop and Test Connection Methods (will help determine the final shape of lamp)</li>
+  <li>Print Final Lamp (in modular pieces)</li>
+</ol>
+    </body>
+</html>
