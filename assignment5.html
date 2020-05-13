@@ -16,109 +16,130 @@
     </div>
     <h2>Introduction</h2>
             <p>
-                This week, I worked on creating one printable mesh from two separate STLs and getting started on my lamp project. I'll cover both projects over two parts in the documentation below! 
-        </p>
-<h1>Part One: STL Mesh</h1>
+                This week I continued work on my lamp and began designing a mold. I had a blast working on the lamp! You can read more about how I built it below and find files related to the lamp here <LINK><https://drive.google.com/drive/folders/1AlWajXTFC1MzhczpSdu5igU4pLt4LDZJ?usp=sharing>.
+                </p>
+                 <p>
+            <img src="L2_1.jpg" width=400></a>
+            </p>
+<h1>Lamp: Grasshopper Tests</h1>
 
 <p>
-    Originally for this mesh assignment, I wanted to combine two STLs of classical sculptures to create a silly phone stand (see my sketches below!). I learned some important lessons along the way on checking if a mesh is a "good mesh" before you start working, and *why* it's challenging to work with very detailed meshes. After too much fiddling with my original plan, I pivoted and was able to successfully combine two simpler meshes.
-        </p>
+    While digging into how to create repeated geometric forms I found a super helpful tutorial <https://www.youtube.com/watch?v=YDFofhlWNxs> for making voronoi patterns in grasshopper. As a preliminary test, I made a small spiral surface with the voronoi pattern. There were some issues baking at first: it wasn’t making the holes from the voronoi cells or extruding the geometry correctly. I realized that I was scaling the voronoi cells too large- causing them to mesh into each other to create impossible shapes. After I adjusted for this, the voronoi surface baked perfectly.
+    </p>
          <p>
-            <img src="L1c.jpg" width=400></a>
+            <img src="L2_3.jpg" width=400></a>
             </p>
-<h2>Imported STLs</h2>
 <p>
-   First, I imported these awesome sculpture STLs into rhino. The original files had ~millions of triangles, so I reduced them to about 150,000 each (which turned out to be unweildy, still!) I didn't check to see if these meshes were "good meshes" when I imported them- I wish now that I had. After resizing and manipulating their mesh, it would have been good to know if the issues came from me or the original files.
-        </p>
-     
-        <p>
-            <img src="L1.png" width=400></a>
-            </p>
-
-<h2>Mesh Manipulation</h2>
-     <p>
-            I took measurements of my phone and used them to size and space the two statues. I had to make some changes to my original design because I wasn't confident about measuring the size between different parts of the mesh. I used the distance tool to do this, but had trouble knowing if I selected the portion of the mesh that I really wanted to measure from. Any tips? To get around the measuring uncertainty, I made a more pronounced and geometric stand between the two figures (which is clunky looking for sure, but I figured a fine place to start with a prototype.)  The phone stand  could accomodate my phone in it's case- while plugged into the charger. Then, I used the "points on" command to manipulate their mesh so it didn't interfere with the arms that held the phone OR extend beyond the base I built for the stand. (I am sure this manipulation contributed to my "bad mesh" later down the road.)
-        </p>  
-<p>
-    I converted my polysurface phone stand into a mesh, then tried several different methods (like BooleanMeshUnion, Join, etc) to merge the three pieces into a printable surface. I tried to repair the mesh afterwards, but to no avail. I think it was such a mess at that point, I'd need to try again with freshly imported meshes- then proceed with more caution while manipulating the mesh. You can see my <a href="https://drive.google.com/file/d/1wJqA0D_7a_BexSJfQfx1PBPreJhdIqAZ/view?usp=sharing">Rhino File</a> here.
+    I learned a good lesson after my test printed: the surface was fragile! I broke it taking it off the printer. Like a lot. I knew my next prints would need thicker walls.
 </p>
 <p>
-            <img src="L2.png" width=400></a>
+            <img src="L2_2.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L2_2a.jpg" width=400></a>
+            </p>
+<h2>Lamp Test Prints</h2>
+<p>
+   Now that I had my texture, I could apply it to whatever surface I wanted. At Nadya’s suggestion, I scoped back the shape I was originally planning on and applied my voronoi surface to elegant “chime” shapes. I plan to use this project as a stepping stone for continued work in my final project (applying the voronoi pattern to more complicated geometry- with greater precision.) I printed the tests at 50% height for the sake of time. This ended up working out later because the shorter print paired nicely with the tall print. My first test print had some issues: it’s base was too thin, and the pattern’s cells were too large for my liking. The base was so flimsy- it broke off the voronoi cells, and also in half as I tried to remove it from the printer.
+</p>
+     
+        <p>
+            <img src="L2_4.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L2_4a.jpg" width=400></a>
+            </p>
+<p>
+    The second version I printed had with a thicker base with denser infill. The supports were beautiful on this print. For fun, I tried it on the lamp guts before taking out all the cells. This gave me the idea to try a nesting shade to go over the voronoi lamp
+</p>
+ <p>
+            <img src="L2_4b.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L2_4c.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L2_4d.jpg" width=400></a>
             </p>
 
-<h2>Plan B</h2>
+<h2>Printing and Iterating</h2>
+     <p>
+            Some of the tests I wanted to print didn’t work out. I wanted to try prints with even thicker bases, as well as experiment with voronoi cells at various sizes and extruded depths. I loved working with the light and wanted to see how different textures would affect the effect it produced. HOWEVER: I ran into serious issues getting these polysurfaces to connect with the base of the lamp. My boolean unions kept failing. Upon some inspection and a few helpful tips from Josh, I learned that something in my Grasshopper definition was creating non-manifold polysurfaces when I extruded the voronoi pattern too thick. I’m still looking into this. In the meantime, this is what I landed on:
+</p>
+<p>
+            <img src="L2_5.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L2_6.jpg" width=400></a>
+            </p>
+<p>
+    I liked the warm cast the wood infill PLA gave the light, so I designed a nesting shade to pair with the voronoi cell surface. At first I wasn’t happy with the effect- the light was too weak (you can see this in the first picture). I played a bit with what strength and size lightbulb I paired with the lamp- I found one I liked for the big lamp (second photo), but didn’t have another to pair with the little guy. Maybe I’ll order one. Here’s how they turned out:
+</p>
+<p>
+            <img src="L2_7a.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L2_7b.jpg" width=400></a>
+            </p>
+<p>
+            <img src="L2_8.jpg" width=400></a>
+            </p>
+<p>
+    I think ideally, I’d cover the ugly bits of the bulb with scant open voronois cells at the top of the lamp, moving to denser voronoi cells at the bottom (like a gradient). This would give me the best of both worlds: texture play and glowing warm color.
+</p>
+
+<h2>Next Steps</h2>
     <p>
-        I decided to try again with simpler meshes to see if I could get it to work. On thingiverse, I found two pieces of simpler geometry that I wanted to combine in order to create a personalized plant clip (photos below). I checked to be sure that both of the meshes I imported were "good meshes" before starting to work. (Several files I found on thingiverse were not!) 
-</p>      
-<p>
-            <img src="L3.png" width=400></a>
-            </p>
-<p>
-            <img src="L4.png" width=400></a>
-            </p>
+        Next, I’m going to dig more into non-manifold edge issue in my GH definition and learn more about applying different geometry to surfaces. (I want a different shape for my final project.) I’d also like to learn how to applying patterns to surfaces in a gradient.
+</p>
 
-<h2>Modifying Mesh: Round Two</h2>
+
+<h1>Mold: Part One</h1>
     <p>
-        First, I removed parts of the flower FOB that I didn't want. I placed the flower where I wanted it to attach to the plant clip, and used BooleanMeshUnion to combine the shapes. After, I used RepairMesh to check that it was a good mesh. Finally, I exported the mesh as an STL- it passed all the rapid prototyping checks! You can see my files <a href="https://drive.google.com/drive/folders/1e6KmVUGhG8IxK2MgEsNgUiLHWhi7PdOd?usp=sharing"> here</a>.
-</p>      
+        I’m really into gardening- so I decided to make a mold for cute planters. After some sketching, I landed on an asymmetrical cube (or any polygon!) design. I planned to make it in grasshopper so I could easily modify the number of surfaces and their skew. 
+</p>
 <p>
-            <img src="L5.png" width=400></a>
+            <img src="M1.jpg" width=400></a>
             </p>
+<p>
+    I also sketched some of the molds and the mold-for-molds to try and wrap my head around what exactly I needed to make and how it would work.
+</p>
+<p>
+            <img src="M2.jpg" width=400></a>
+            </p>
+<p>
+    After MANY sketches, I decided the best move would be to build my final object and work with the molds and molds-for-molds directly in Rhino.
+</p>
 
-<h1>Part Two: Lamp</h1>
+<h2>Initial Rhino Work</h2>
     <p>
-        For the lamp project, I was inspired by John Grade's "Middle Fork" piece- now on display at the SAM. I'm drawn to the intersection of geometric and organic shapes, and wanted to incorporate that into my lamp. I also thought it'd be an excellent opportunity to work modularly with my printer(to avoid long prints and sizing limits from the printer).
-</p>      
+        I made a grasshopper definition that produces a symmetrical cube planter and tried several methods to modify its shape. I didn’t think it would be this tough- I feel like I’m missing some obvious solution right in front of my face. I tried:
+<ul>
+  <li>Creating a cube in rhino and turning points on (they didn’t show up as I expected in the corners?!)
+</li>
+  <li>Baking the symmetrical cube from grasshopper and manipulating the points by hand (this time, the points were where I expected them. However, this made messy shapes. This method also wouldn’t allow me to easily customize my shapes later.)
+</li>
+  <li>Using “transform” in grasshopper
+</li>
+    <li>
+        Using “twisted cube” in grasshopper (I was able to make a shape that I liked, but could not figure out how to extrude it to make a polysurface.)
+    </li>
+    <li>
+     Some other things that I did not write down
+    </li>
+</ul>
+You can see the twisted cube I made in the screen shots below, along with the symmetrical planter from grasshopper
+</p>
 <p>
-            <img src="L6a.png" width=400></a>
+            <img src="M3.jpg" width=400></a>
             </p>
 <p>
-            <img src="L6b.png" width=400></a>
+            <img src="M4.png" width=400></a>
             </p>
+<h2>Next Steps</h2> 
 <p>
-            <img src="L6c.png" width=400></a>
-            </p>
-<h2>Sketches</h2> 
-<p>
-        I experimented with different shapes and presentations for my lamp. My favorites are a linear lamp (like a piece of driftwood) build modularly around a LED tube light, or, a "warped cynlinder" shaped lamp that sort of nests around itself. My plan is to create a grasshopper definition that allows me to apply a geometric patter of cut outs onto different geometries, that attach modularly to form the complete lamp. To connect the pieces, I'm considering screws, flexible tabs that snap, or pins that lock into place by twisting.
-</p>   
-<p>
-            <img src="L7.jpg" width=400></a>
-            </p>
-<p>
-            <img src="L7a.jpg" width=400></a>
-            </p>
-<p>
-            <img src="L7b.jpg" width=400></a>
-            </p>
-<p>
-            <img src="L7c.jpg" width=400></a>
-            </p>
-<p>
-        Here are some more examples of the textures and shapes for my lamp. Depending on how the grasshopper definition and connection mechanism for the modular pieces go, I can scope the final shape of the lamp more or less complicated.  
-</p>   
-<p>
-            <img src="L8.jpg" width=400></a>
-            </p>
-<p>
-            <img src="L8a.jpg" width=400></a>
-            </p>
-<p>
-            <img src="L8ab.jpg" width=400></a>
-            </p>
-<p>
-            <img src="L8c.jpg" width=400></a>
-            </p>
+       I’m going to finish designing my “final object” and start building it’s mold… and that mold’s mold (what?) This project is making my eyes go crossed. 
+</p>
 
-<h2>Next Steps: Prep and Test</h2> 
-
-<p>
-        This week I made less progress than I was anticipating due to a family emergency. I've begun building my grasshopper definition (working with Voroni), but have not printed any tests just yet. I want to get the printer running asap, because I'm working with a PLA that is infused with wood for the final product. I want to understand the material's quirks before I get too far! My plan moving forward is: 
-</p>  
-<ol>
-  <li>Finish Grasshopper Definition (testing with light to adjust thickness, hole sizes, and hole frequency for desired effect)</li>
-  <li>Develop and Test Connection Methods (will help determine the final shape of lamp)</li>
-  <li>Print Final Lamp (in modular pieces)</li>
-</ol>
     </body>
 </html>
