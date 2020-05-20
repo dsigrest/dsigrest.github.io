@@ -16,105 +16,128 @@
     </div>
     <h2>Introduction</h2>
             <p>
-                This week I continued work on my lamp and began designing a mold. I had a blast working on the lamp! You can read more about how I built it below and find files related to the lamp <a href="https://drive.google.com/drive/folders/1AlWajXTFC1MzhczpSdu5igU4pLt4LDZJ?usp=sharing"> here </a>.
+                This week I created and cast my molds and put together a plan for my ~fInAL pRoJEcT~. You can find files related to my mold project <a href="https://drive.google.com/drive/folders/1B_YqNI1PiAtGFv7jGmHbUylR0QWyBxXa?usp=sharing"> here </a>.  You can read more below about my mold making adventures and the plan of attack for my final project.
                 </p>
-                 <p>
-            <img src="L2_1.jpg" width=400></a>
-            </p>
+                
 <h1>Lamp: Grasshopper Tests</h1>
 
 <p>
-    While digging into how to create repeated geometric forms I found a <a href="https://www.youtube.com/watch?v=YDFofhlWNxs"> super helpful tutorial</a> for making voronoi patterns in grasshopper. As a preliminary test, I made a small spiral surface with the voronoi pattern. There were some issues baking at first: it wasn’t making the holes from the voronoi cells or extruding the geometry correctly. I realized that I was scaling the voronoi cells too large- causing them to mesh into each other to create impossible shapes. After I adjusted for this, the voronoi surface baked perfectly.
-    </p>
-         <p>
-            <img src="L2_3.png" width=400></a>
-            </p>
-<p>
-    I learned a good lesson after my test printed: the surface was fragile! I broke it taking it off the printer. Like a lot. I knew my next prints would need thicker walls.
-</p>
-<p>
-            <img src="L2_2.jpg" width=400></a>
-            </p>
-<p>
-            <img src="L2_2a.jpg" width=400></a>
-            </p>
-<h2>Lamp Test Prints</h2>
-<p>
-   Now that I had my texture, I could apply it to whatever surface I wanted. At Nadya’s suggestion, I scoped back the shape I was originally planning on and applied my voronoi surface to elegant “chime” shapes. I plan to use this project as a stepping stone for continued work in my final project (applying the voronoi pattern to more complicated geometry- with greater precision.) I printed the tests at 50% height for the sake of time. This ended up working out later because the shorter print paired nicely with the tall print. My first test print had some issues: it’s base was too thin, and the pattern’s cells were too large for my liking. The base was so flimsy- it broke off the voronoi cells, and also in half as I tried to remove it from the printer.
-</p>
-     
+    I found another great grasshopper tutorial that ended up helping me make my twisted cube shape: <a href="https://www.youtube.com/watch?v=YDFofhlWNxs"> This tutorial</a> is actually by the same guy who did the voronoi cell tutorial! I recommend his stuff. I made a grasshopper definition that allowed me to make and customize twisted cubes and rectangles. I tried writing the definition that also subtracted out the pot’s center, but I after several tries I was cutting it close time-wise and decided to just baked the base polysurface and used boolean difference in Rhino. 
+         </p>
         <p>
-            <img src="L2_4.jpg" width=400></a>
+            <img src="MM_1.png" width=400></a>
+            </p>
+ <p>
+            <img src="MM_2.png" width=400></a>
             </p>
 <p>
-            <img src="L2_4a.jpg" width=400></a>
+   From that shape, I created a mold and a mold-for-molds using various combos of bool union and bool differences. I split my mold-for-molds in half to make extraction of my mold easier. At the time, I was worried that this would cause leaks or deformations in my mold. (I later learned that in actuality, merely splitting my mold-for-molds in half was not nearly enough for easy extraction).
+</p>
+        <p>
+            <img src="MM_3.png" width=400></a>
+            </p>
+ <p>
+            <img src="MM_4.png" width=400></a>
             </p>
 <p>
-    The second version I printed had with a thicker base with denser infill. The supports were beautiful on this print. For fun, I tried it on the lamp guts before taking out all the cells. This gave me the idea to try a nesting shade to go over the voronoi lamp
+   Finally, my mold-for-molds went to print! It took 1 day and 9 hours (holy cow). I was feeling nervous: with such a long print time, I would not have time to make another mold-for-molds if this didn’t work.
+</p>
+        <p>
+            <img src="MM_4a.jpg" width=400></a>
+            </p>
+
+<h2>Filling the Mold-for-Molds</h2>
+<p>
+   Sure enough, the split mold-for-molds didn’t print entirely square. I rubber banded the crap out of it to hold the pieces tightly together, making as flush a connection as I could.
+</p>
+        <p>
+            <img src="MM_5.jpg" width=400></a>
+            </p>
+<p>
+    I mixed the oomoo in equal parts- taking care to prepare my work station. After Nadya’s lecture, I was prepared for a sloppy process. I still made a mess. The oomoo stuck to everything, like some sort of space goop. I’m glad I was as prepared as I was!
 </p>
  <p>
-            <img src="L2_4b.jpg" width=400></a>
+            <img src="MM_6.jpg" width=400></a>
             </p>
 <p>
-            <img src="L2_4c.jpg" width=400></a>
+    Even with my split mold-for-molds, I had a tough time extracting the twisted base of my mold. The lid lifted straight out of the mold- but the bases twisted around themselves a bit. Another issue was that the molds were connected to each other- maneuvering one silicone cast affected the positioning of the other, making tears more likely. I used dish soap to help work the molds out, but still one ripped.
+</p>
+ <p>
+            <img src="MM_7.jpg" width=400></a>
             </p>
 <p>
-            <img src="L2_4d.jpg" width=400></a>
+            <img src="MM_8.jpg" width=400></a>
             </p>
+<p>
+            <img src="MM_9.jpg" width=400></a>
+            </p>
+<p>
+    Next time, I’d split the mold-for-molds in a different way to make the mold easier to extract. I’ll also split up my molds into separate pieces for each part, rather than casting them all into one mold, so I don’t compromise the other mold parts while extracting another.
+</p>
 
-<h2>Printing and Iterating</h2>
+
+<h2>Molding the Succulent Containers</h2>
      <p>
-            Some of the tests I wanted to print didn’t work out. I wanted to try prints with even thicker bases, as well as experiment with voronoi cells at various sizes and extruded depths. I loved working with the light and wanted to see how different textures would affect the effect it produced. HOWEVER: I ran into serious issues getting these polysurfaces to connect with the base of the lamp. My boolean unions kept failing. Upon some inspection and a few helpful tips from Josh, I learned that something in my Grasshopper definition was creating non-manifold polysurfaces when I extruded the voronoi pattern too thick. I’m still looking into this. In the meantime, this is what I landed on:
+            Finally it’s time to cast my succulent pots! I started with a plain plaster cast:
+
 </p>
 <p>
-            <img src="L2_5.jpg" width=400></a>
+            <img src="MM_10.jpg" width=400></a>
             </p>
 <p>
-            <img src="L2_6.jpg" width=400></a>
-            </p>
-<p>
-    I liked the warm cast the wood infill PLA gave the light, so I designed a nesting shade to pair with the voronoi cell surface. At first I wasn’t happy with the effect- the light was too weak (you can see this in the first picture). I played a bit with what strength and size lightbulb I paired with the lamp- I found one I liked for the big lamp (second photo), but didn’t have another to pair with the little guy. Maybe I’ll order one. Here’s how they turned out:
+    Then I experimented with some “cast in place” surfaces: pennies, seaglass, bits of terracotta pots, and different colored broken pieces of plaster. I sanded the pieces with superfine sandpaper, using water to cut down on the dust. I would have liked smaller pieces of seaglass to get more consistent coverage. 
 </p>
 <p>
-            <img src="L2_7a.jpg" width=400></a>
+            <img src="MM_11.jpg" width=400></a>
             </p>
 <p>
-            <img src="L2_7b.jpg" width=400></a>
+            <img src="MM_12.jpg" width=400></a>
             </p>
 <p>
-            <img src="L2_8.jpg" width=400></a>
+    Some of the plaster molds had bubbles in them, but I kind of liked the rustic effect it had next to the “cast in place” terra cotta. 
+</p>
+<p>
+            <img src="MM_13.jpg" width=400></a>
             </p>
 <p>
-    I think ideally, I’d cover the ugly bits of the bulb with scant open voronois cells at the top of the lamp, moving to denser voronoi cells at the bottom (like a gradient). This would give me the best of both worlds: texture play and glowing warm color.
+    I didn’t have any succulents, but I did have some of these adorable succulent tea candles around the house. When I lit them, I was really happy with how the light interacted with the angles of my shapes.
+
+</p>
+<p>
+            <img src="MM_14.jpg" width=400></a>
+            </p>
+<p>
+            <img src="MM_15.jpg" width=400></a>
+            </p>
+<p>
+            <img src="MM_16.jpg" width=400></a>
+            </p>
+<p>
+            <img src="MM_16a.jpg" width=400></a>
+            </p>
+<p>
+            <img src="MM_17.jpg" width=400></a>
+            </p>
+<p>
+            <img src="MM_17a.jpg" width=400></a>
+            </p>
+<p>
+    I tried mixing plaster with some acrylic paint to color it, then made it a very watery mix to cast the plaster bits in plaster. I had to make it this way in order for the plaster to work it’s way down into the mold. But, this took FOREVER. It’s still not done curing- maybe it never will! Later, I’d like to try casting other objects in place to get different textures. I’d like to try casting around crumpled bits of aluminum foil to get a “geode-like” texture. I’d also like to test different finishes on the pots to give them a glazed, shiny look. I’m also a fan of the matte finish- but it could be cool to see how a sheen would work.
+
 </p>
 
-<h2>Next Steps</h2>
+
+<h1>Final Project Plan</h1>
+   
+<h2>Meet my Final Project</h2>
     <p>
-        Next, I’m going to dig more into non-manifold edge issue in my GH definition and learn more about applying different geometry to surfaces. (I want a different shape for my final project.) I’d also like to learn how to applying patterns to surfaces in a gradient.
-</p>
-
-
-<h1>Mold: Part One</h1>
-    <p>
-        I’m really into gardening- so I decided to make a mold for cute planters. After some sketching, I landed on an asymmetrical cube (or any polygon!) design. I planned to make it in grasshopper so I could easily modify the number of surfaces and their skew. 
+        text
 </p>
 <p>
             <img src="M1.jpg" width=400></a>
             </p>
 <p>
-            <img src="M1_a.jpg" width=400></a>
-            </p>
-<p>
-            <img src="M1_b.jpg" width=400></a>
-            </p>
-<p>
-            <img src="M1_c.jpg" width=400></a>
-            </p>
-<p>
-            <img src="M1_d.jpg" width=400></a>
-            </p>
-<p>
-    I also sketched some of the molds and the mold-for-molds to try and wrap my head around what exactly I needed to make and how it would work.
+   text
 </p>
 <p>
             <img src="M2.jpg" width=400></a>
