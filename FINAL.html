@@ -16,72 +16,180 @@
     </div>
     <h1>Goals and Planning</h1>
             <p>
-                This week I created and cast my molds and put together a plan for my ~fInAL pRoJEcT~. You can find files related to my mold project <a href="https://drive.google.com/drive/folders/1B_YqNI1PiAtGFv7jGmHbUylR0QWyBxXa?usp=sharing"> here </a>.  You can read more below about my mold making adventures and the plan of attack for my final project.
+                For my final project, I set out to make a modular light piece. I went through many iterations, but you can find my final files here <LINK: https://drive.google.com/drive/folders/1eARpsuQ61wlaHjvPa394fH3BbnYamIvQ?usp=sharing>. The goal is to create a light fixture that a user can easily manipulate the form of to suit their liking. I designed the light so that it can lay flat or bend in 3 dimensions. The light needed to be study, support the LED in the center, and have modular options that gave the user flexibility to create any shape they might want. A key part of this design was the connection mechanism- it needed to be hidden from view, easy to attach and detach, and firmly secure the light’s pieces together. I was inspired by John Grade's "Middle Fork" piece.
                 </p>
         <p>
-            <img src="MM_1.png" width=400></a>
+            <img src="L6b.png" width=400></a>
+            </p>
+       <p>
+            <img src="L7c.png" width=400></a>
+            </p>
+       <p>
+            <img src="L8ab.jpg" width=400></a>
             </p>
                 
 <h1>Making the Base Shapes</h1>
 
 <p>
-    talk here about building the base shapes.
+    First, I built the base curves in rhino. I created torus shapes at the diameters I planned, then sliced them into the desired angles. I’d use these shapes to apply my textures to.
 </p>
         <p>
-            <img src="MM_1.png" width=400></a>
+            <img src="F1.jpg" width=400></a>
+            </p>
+<p>
+            <img src="F2.jpg" width=400></a>
+            </p>
+<p>
+            <img src="F3.jpg" width=400></a>
             </p>
 <h1>Building and Testing Textures</h1>
+<h2> Initial Voronoi Work and Adaption</h2>
 <p>
-   talk here about voronoi textures
+   First I played with the light’s texture. Using grasshopper, I wrote a definition to create a voronoi texture and wrap it around a surface (thanks @Assignment5 <https://dsigrest.github.io/assignment5.html>. I experimented with different quantities and patterns of cells, extrusion depths. I learned how to make a point a tractor and manipulate the voronoi cells with it. Finally, I used the core surface where I applied my texture to create a built in “shade ” that hide the LED and diffused the light. Ultimately, I wanted to use the voronoi (because it already existed) to test wrapping the shape. Then, I’d recreate that process with a paneled texture I planned to make using the plugin Lunchbox. The textures wrapped and baked, so I moved on… 
 </p>
         <p>
-            <img src="MM_3.png" width=400></a>
+            <img src="F4.png" width=400></a>
             </p>
 <p>
-   talk here about extrusion issues and resolution
+ ...And ran into a brick wall! Turns out, Lunchbox’s installer isn’t compatible with Macs. I spent quite a bit of time searching for alternatives or hacky ways to install the plugin. I learned that if I can download the plugin as a ZIP, rather than a file with a built-in installer, then I can manually install the plugin into Rhino/Grasshopper. Finally, I got into lunchbox and built my texture! I tried to manipulate that surface with the point attractors as well, but it didn’t work out (and I was wary of time, so I moved on!)
 </p>
  <p>
-            <img src="MM_4.png" width=400></a>
+            <img src="F5.png" width=400></a>
             </p>
+<h2>Extrusion/Offset Issues</h2>
 <p>
-  talk here about non-manifold edge problem
+During my first test print, I discovered a major issue with my grasshopper definition:
 </p>
         <p>
-            <img src="MM_4a.jpg" width=400></a>
+            <img src="F6.jpg" width=400></a>
             </p>
 <p>
-  non-manifold edge resolution and texture test prints (including lunchbox texture)
+  I was extruding my texture on the z-axis, after wrapping it around the cylinder shape. This caused some areas not to extrude to any depth at all- rather, they lengthened along the same plane. I tried to fix this in two ways:
+</p>
+<p> My first fix was to map the shape as a rectangle, build and extrude texture on that rectangle, then use surface morph to wrap that extruded texture around the shape. Sounds great, right? Nope. The problem? Wrapping the extruded texture in that way creates a non-manifold edge. It looked great, but I couldn’t join the shape with any hardware or print it.
 </p>
 <p>
-            <img src="MM_4a.jpg" width=400></a>
+            <img src="F6_1.jpg" width=400></a>
             </p>
+<p> After I did some of my own research and came up empty handed, I reached out on slack! Prof. Nadya suggested my final fix: just bake the texture’s curves- don’t worry about extruding it in grasshopper. In Rhino, use flow-along-surf to wrap the texture around your desired shape. “Slice” cuts the texture out, then I used offset to make it any thickness I want! Tada! I went crazy making models testing various patterns and depths.
+</p>
+<h2>First Texture Test Prints</h2>
+<p>Finally! Some prints!</p>
+ <p>
+            <img src="F8.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F8_1.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F8_2.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F8_3.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F8_4.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F8_5.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F8_6.jpg" width=400></a>
+            </p>
+<p> I tested the prints with light, along with different “shade” options: canvas, tissue paper, and vellum. The canvas was too thick, and the tissue paper too flimsy. The built in shade worked well to diffuse the light, but I didn’t like the texture the voronoi cells extruded on the outside of the shade- it looked unfinished. I liked vellum, but it would require a lot of work by hand to nicely fit the curved pieces.
+</p>
+ <p>
+            <img src="F9.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F9_1.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F9_2.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F9_3.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F9_4.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F9_5.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F9_6.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F9_7.jpg" width=400></a>
+            </p>
+<p> I decided to go with the built-in shade, but to try and hide it from the viewer. I wanted to diffuse the light of the LED while having a quality “surface finish.” Based on the aesthetics and offset tests, I planned to offset the lunchbox texture 2mm and the “shade” 0.5mm.
+</p>
 
-<h2>The Connection Mechanism</h2>
+
+<h1>The Connection Mechanism</h1>
 <p>
-   talk about idea and show sketches
+I chewed on how to connect these light pieces for awhile before coming up with the “lock and twist” idea. I liked it because it was hidden, easy to construct, and doubled as a way to secure the LED in place.
 </p>
         <p>
-            <img src="MM_5.jpg" width=400></a>
+            <img src="F10.jpg" width=400></a>
             </p>
 <p>
-    talk about first iteration and problems</p>
- <p>
-            <img src="MM_6.jpg" width=400></a>
+            <img src="F11.jpg" width=400></a>
             </p>
 <p>
-    talk about updates and supports adventures
+            <img src="F11_1.jpg" width=400></a>
+            </p>
+<p>
+  The first print came out quite clunky- and, the infill made the arms very fragile, but, the idea worked! I made sure to test the supports, as well. I was worried an automatic setting wouldn’t cut it- but the “only on buildplate” setting worked great! The “everywhere” option was impossible to remove the supports.
 </p>
  <p>
-            <img src="MM_7.jpg" width=400></a>
+            <img src="F12.jpg" width=400></a>
             </p>
+ <p>
+            <img src="F13.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F13_1.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F14.jpg" width=400></a>
+            </p>
+ <p>
+            <img src="F14_1.jpg" width=400></a>
+            </p>
+<p> I refined it by paring down on the size, minimizing the stopper on the inside, and made slight adjustments to the connection angle. I set the infill to 100 to combat the fragile arms, and also figured the shorter size would help, too. 
+</p>
+<h2>Supports</h2>
+<p>When testing the connection mechanism on my angled pieces, I discovered the need for custom supports. Previously, I’d been generating supports at a 45 degree angle and only over the buildplate (otherwise, I found they were impossible to remove). By restricting the supports to only over the buildplate though, the arms on my 45 degree angle and 22.5 degree angle pieces weren’t supported enough during the print. I tried a couple methods of making my own supports. Some were huge, some were too close to the print and stuck. Here’s one failed support:
+</p>
+<p>
+            <img src="F17_.png" width=400></a>
+            </p>
+<p>The supports that worked were right-angle triangles. Making the triangle this shape helped me keep track of the “45 degree angle/supports rule.”
+</p>
+    <p>
+            <img src="F18_.png" width=400></a>
+            </p>
+ <img src="F19_.png" width=400></a>
+            </p>
+ <img src="F20_.png" width=400></a>
+</p>
 
-<h2>Putting it All Together</h2>
+
+<h1>Putting it All Together</h1>
      <p>
-            talk about learning takeaways and final images
+           I had to fiddle a bit with aligning the top connectors on the 45 and 22.5 degree pieces, but otherwise, it was smooth sailing finishing the pieces! I applied my texture to the original surfaces I built, then used boolean union to connect the textured cylinder with the top and bottom connection pieces. Up until the last moment, I was caught between using the voronoi or lunchbox texture (see photos below!) Ultimately, I opted for the lunchbox to match my original inspo. The printer’s going now! More photos to come of it all put together!!
+
 
 </p>
 <p>
-            <img src="MM_10.jpg" width=400></a>
+            <img src="F21.jpg" width=400></a>
+            </p>
+<p>
+            <img src="F22.jpg" width=400></a>
+            </p>
+<p>
+            <img src="F23.jpg" width=400></a>
             </p>
     
     </body>
